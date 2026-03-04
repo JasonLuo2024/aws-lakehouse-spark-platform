@@ -29,3 +29,28 @@ Designed and implemented a cloud-native lakehouse architecture on AWS using Terr
                                                                           |
                                                                           v
                                                                        BI Tools
+
+
+2. Project Folder Structure
+
+    cloud-lakehouse-platform
+    │
+    ├── terraform
+    │   ├── main.tf
+    │   ├── variables.tf
+    │   ├── backend.tf
+    │   ├── iam.tf
+    │   ├── s3.tf
+    │   ├── emr.tf
+    │   └── outputs.tf
+    │
+    ├── spark
+    │   └── etl_job.py
+    │
+    ├── data
+    │   └── sample_dataset.csv
+    │
+    ├── scripts
+    │   └── upload_data.py
+    │
+    └── README.md
