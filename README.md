@@ -22,32 +22,32 @@ Technologies used:
 
 # 1. Architecture Overview
 
-+--------------------+
-|  External Dataset  |
-| (CSV / JSON files) |
-+---------+----------+
-          |
-          v
-  S3 Bucket (RAW)
-  s3://lakehouse/raw/
-          |
-          v
- Spark ETL Processing
- (EMR / Glue / Spark)
-          |
-          v
- S3 Bucket (PROCESSED)
- s3://lakehouse/processed/
-          |
-          v
- S3 Bucket (CURATED)
- s3://lakehouse/curated/
-          |
-          v
-     Athena Query
-          |
-          v
-       BI Tools
+          +--------------------+
+          |  External Dataset  |
+          | (CSV / JSON files) |
+          +---------+----------+
+                    |
+                    v
+            S3 Bucket (RAW)
+            s3://lakehouse/raw/
+                    |
+                    v
+           Spark ETL Processing
+           (EMR / Glue / Spark)
+                    |
+                    v
+           S3 Bucket (PROCESSED)
+           s3://lakehouse/processed/
+                    |
+                    v
+           S3 Bucket (CURATED)
+           s3://lakehouse/curated/
+                    |
+                    v
+               Athena Query
+                    |
+                    v
+                 BI Tools
 
 This architecture enables:
 
@@ -60,27 +60,27 @@ This architecture enables:
 
 # 2. Project Folder Structure
 
-cloud-lakehouse-platform
-│
-├── terraform
-│   ├── main.tf
-│   ├── variables.tf
-│   ├── backend.tf
-│   ├── iam.tf
-│   ├── s3.tf
-│   ├── emr.tf
-│   └── outputs.tf
-│
-├── spark
-│   └── etl_job.py
-│
-├── data
-│   └── sample_dataset.csv
-│
-├── scripts
-│   └── upload_data.py
-│
-└── README.md
+          cloud-lakehouse-platform
+          │
+          ├── terraform
+          │   ├── main.tf
+          │   ├── variables.tf
+          │   ├── backend.tf
+          │   ├── iam.tf
+          │   ├── s3.tf
+          │   ├── emr.tf
+          │   └── outputs.tf
+          │
+          ├── spark
+          │   └── etl_job.py
+          │
+          ├── data
+          │   └── sample_dataset.csv
+          │
+          ├── scripts
+          │   └── upload_data.py
+          │
+          └── README.md
 
 ---
 
@@ -178,25 +178,25 @@ Athena queries data directly from S3 without requiring database servers.
 
 # 8. Example Data Flow
 
-sample_dataset.csv
-        │
-        ▼
-S3 RAW Layer
-        │
-        ▼
-Spark ETL Job
-        │
-        ▼
-Parquet Files (Processed)
-        │
-        ▼
-Curated Data Layer
-        │
-        ▼
-Athena Queries
-        │
-        ▼
-Dashboards / BI Tools
+          sample_dataset.csv
+                  │
+                  ▼
+          S3 RAW Layer
+                  │
+                  ▼
+          Spark ETL Job
+                  │
+                  ▼
+          Parquet Files (Processed)
+                  │
+                  ▼
+          Curated Data Layer
+                  │
+                  ▼
+          Athena Queries
+                  │
+                  ▼
+          Dashboards / BI Tools
 
 ---
 
